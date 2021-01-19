@@ -42,6 +42,7 @@ RUN apk add --no-cache --virtual .build-deps gcc python3-dev musl-dev postgresql
     && python3 -m pip install -r /dsmr/dsmrreader/provisioning/requirements/base.txt --no-cache-dir \
     && python3 -m pip install psycopg2 --no-cache-dir \
     && python3 -m pip install mysqlclient --no-cache-dir \
+    && python3 -m pip install sphinx-intl pylama pytest --no-cache-dir \
     && apk --purge del .build-deps \
     && rm -rf /var/cache/apk/* \
     && rm -rf /tmp/*
